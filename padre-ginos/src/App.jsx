@@ -5,9 +5,21 @@ function App() {
   return (
     <div>
       <h1>Padre Gino's</h1>
-      <Pizza name="Cheese Pizza" description="4 cheeses" />
-      <Pizza name="Pepperoni" description="A pepperoni pizza" />
-      <Pizza name="Sausage" description="delicious" />
+      <Pizza
+        name="Cheese Pizza"
+        description="4 cheeses"
+        image="/public/pizzas/sicilian.webp"
+      />
+      <Pizza
+        name="Pepperoni"
+        description="A pepperoni pizza"
+        image="/public/pizzas/pepperoni.webp"
+      />
+      <Pizza
+        name="Sausage"
+        description="delicious"
+        image="/public/pizzas/ital_supr.webp"
+      />
     </div>
   );
 }

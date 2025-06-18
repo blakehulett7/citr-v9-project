@@ -3,6 +3,7 @@ function Pizza(args) {
     <div className="pizza">
       <h2>{args.name}</h2>
       <p>{args.description}</p>
+      <img src={args.image} alt={args.name} />
     </div>
   );
 }
