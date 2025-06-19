@@ -11,7 +11,7 @@ function App() {
         image="/public/pizzas/sicilian.webp"
       />
       <Pizza
-        name="Pepperoni"
+        name="Pepperoni Pizza"
         description="A pepperoni pizza"
         image="/public/pizzas/pepperoni.webp"
       />
