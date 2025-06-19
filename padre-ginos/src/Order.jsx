@@ -24,7 +24,11 @@ function Order() {
               <option value="big_meat">The Big Meat Pizza</option>
             </select>
           </div>
-          <div>
+          <div
+            onChange={function (e) {
+              setPizzaSize(e.target.value);
+            }}
+          >
             <label htmlFor="pizza-size">Pizza Size</label>
             <div>
               <span>
