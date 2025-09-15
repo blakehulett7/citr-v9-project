@@ -5,30 +5,26 @@ function App() {
         React.createElement("h1", {}, "Pixel Perfect Pizzas"),
         React.createElement(Pizza, {
             name: "Cheese",
-            description: "good"
+            description: "good",
         }),
         React.createElement(Pizza, {
             name: "Pepperoni",
-            description: "better"
+            description: "better",
         }),
         React.createElement(Pizza, {
             name: "Sausage",
-            description: "best"
+            description: "best",
         }),
-    )
+    );
 }
 
 function Pizza(props) {
-    return React.createElement(
-        "div",
-        {},
-        [
-            React.createElement("h1", {}, props.name),
-            React.createElement("p", {}, props.description),
-        ]
-    )
+    return React.createElement("div", {}, [
+        React.createElement("h1", {}, props.name),
+        React.createElement("p", {}, props.description),
+    ]);
 }
 
-const container = document.getElementById("root")
-const root = ReactDOM.createRoot(container)
-root.render(React.createElement(App))
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(React.createElement(App));
