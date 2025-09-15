@@ -23,7 +23,7 @@ function Section(props) {
         "div",
         {},
         [
-            React.createElement("h1", {}, props.name),
+            React.createElement("h2", {}, props.name),
             React.createElement("p", {}, props.description),
         ]
     )
