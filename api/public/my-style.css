@@ -24,8 +24,7 @@
 .category {
     width: 100%;
     background-color: var(--category-background);
-    margin-left: 10%;
-    margin-right: 10%;
+    padding: 4rem 3rem;
     border: 1px solid #e5e7eb;
     border-radius: var(--corners);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
