@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import Pizza from "./Pizza";
+import Pizza from "./Pizza.jsx";
 
 function App() {
     return (
