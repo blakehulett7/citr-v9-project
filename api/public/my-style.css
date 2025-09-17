@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    font-family: "Libre Franklin", sans-serif;
+}
+
+:root {
+    --category-background: #f9fafb;
+    --corners: 16px;
+    --corners-small: 10px 0;
+}
+
+.app {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.app h1 {
+    text-align: center;
+}
+
+.category {
+    width: 100%;
+    background-color: var(--category-background);
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--corners);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.category-header {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin: 1rem;
+    justify-content: center;
+}
+
+.category-header img {
+    height: 2rem;
+    width: auto;
+}
+
+.category p {
+    text-align: center;
+}

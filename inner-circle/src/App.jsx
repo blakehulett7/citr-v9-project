@@ -3,7 +3,7 @@ import Category from "./Category.jsx";
 
 function App() {
     return (
-        <div>
+        <div className="app">
             <h1>DW Inner Circle</h1>
             <Category
                 name="Get Started"
