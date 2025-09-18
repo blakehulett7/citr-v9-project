@@ -1,12 +1,43 @@
+import { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import Category from "./Category.jsx";
 import CategorySelector from "./CategorySelector.jsx";
 
 function App() {
+    const [loading, setLoading] = useState(true);
+    const [categories, setCategories] = useState([]);
+
+    async function fetchCategories() {
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+
+        const res = await fetch("/api/categories");
+        const data = await res.json();
+        setCategories(data);
+
+        data.length ? setLoading(false) : null;
+    }
+
+    useEffect(function () {
+        fetchCategories();
+    }, []);
+
     return (
         <div className="app">
             <h1>DW Inner Circle</h1>
             <CategorySelector />
+            <div>
+                {loading ? (
+                    <span className="loader"></span>
+                ) : (
+                    categories.map(function (category) {
+                        <Category
+                            name={category.name}
+                            description={category.description}
+                            image={category.image}
+                        />;
+                    })
+                )}
+            </div>
             <Category
                 name="Get Started"
                 description="New to the Inner Circle? Start here to get up and running"
