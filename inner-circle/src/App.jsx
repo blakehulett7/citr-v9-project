@@ -1,10 +1,12 @@
 import { createRoot } from "react-dom/client";
 import Category from "./Category.jsx";
+import CategorySelector from "./CategorySelector.jsx";
 
 function App() {
     return (
         <div className="app">
             <h1>DW Inner Circle</h1>
+            <CategorySelector />
             <Category
                 name="Get Started"
                 description="New to the Inner Circle? Start here to get up and running"
