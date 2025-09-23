@@ -25,16 +25,19 @@ function App() {
         <div className="app">
             <h1>DW Inner Circle</h1>
             <CategorySelector />
-            <div>
+            <div id="categories">
                 {loading ? (
                     <span className="loader"></span>
                 ) : (
                     categories.map(function (category) {
-                        <Category
-                            name={category.name}
-                            description={category.description}
-                            image={category.image}
-                        />;
+                        return (
+                            <Category
+                                key={category.name}
+                                name={category.name}
+                                description={category.description}
+                                image={category.image}
+                            />
+                        );
                     })
                 )}
             </div>
