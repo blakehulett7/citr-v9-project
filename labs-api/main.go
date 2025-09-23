@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"net/http"
 )
@@ -15,7 +16,10 @@ func main() {
 	fmt.Println("Dominus Iesus Christus")
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("/categories", func(w http.ResponseWriter, r *http.Request) {
+	fs := http.FileServer(http.Dir("./public"))
+
+	mux.Handle("/public/", http.StripPrefix("/public/", fs))
+	mux.HandleFunc("/api/categories", func(w http.ResponseWriter, r *http.Request) {
 		res := []Category{
 			{
 				Name:        "Get Started",
@@ -34,6 +38,18 @@ func main() {
 			},
 		}
 
-		fmt.Println(res)
+		data, err := json.Marshal(res)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+
+		w.Write(data)
 	})
+
+	server := &http.Server{
+		Addr:    ":3000",
+		Handler: mux,
+	}
+	server.ListenAndServe()
 }
