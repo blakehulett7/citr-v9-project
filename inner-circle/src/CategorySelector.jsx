@@ -4,6 +4,12 @@ export default function CategorySelector({ categories, setCategory }) {
         e.preventDefault();
         const data = new FormData(e.target);
         const name = data.get("selectedCategory");
+
+        if (name == "reset") {
+            setCategory(categories);
+            return;
+        }
+
         category = categories.find((category) => category.name === name);
         setCategory([category]);
     }
@@ -26,6 +32,14 @@ export default function CategorySelector({ categories, setCategory }) {
                             </div>
                         );
                     })}
+                    <div>
+                        <input
+                            type="radio"
+                            name="selectedCategory"
+                            value="reset"
+                        />
+                        <span>Reset</span>
+                    </div>
                     <input type="submit" />
                 </div>
             )}
