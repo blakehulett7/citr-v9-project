@@ -5,7 +5,7 @@ import Order from "./Order.jsx";
 function App() {
     return (
         <div>
-            <h1>Padre Gino's Pizza - Order Now</h1>
+            <h1 className="logo">Padre Gino's Pizza - Order Now</h1>
             <Order />
             <PizzaOfTheDay />
         </div>
