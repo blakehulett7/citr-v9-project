@@ -13,11 +13,13 @@ export default function Cart({ cart, checkout }) {
             <h2>Cart</h2>
             <ul>
                 {cart.map(function (item, index) {
-                    <li key={index}>
-                        <span className="size">{item.size}</span> -
-                        <span className="type">{item.pizza.name}</span> -
-                        <span className="price">{item.price}</span> -
-                    </li>;
+                    return (
+                        <li key={index}>
+                            <span className="size">{item.size}</span> -{" "}
+                            <span className="type">{item.pizza.name}</span> -{" "}
+                            <span className="price">{item.price}</span>
+                        </li>
+                    );
                 })}
             </ul>
             <p>Total: {formatter.format(total)}</p>

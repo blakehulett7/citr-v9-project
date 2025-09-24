@@ -44,7 +44,7 @@ export default function Order() {
                     e.preventDefault();
                     setCart([
                         ...cart,
-                        { pizza: selectedPizza, size: pizzaSize, price },
+                        { pizza: selectedPizza, size: pizzaSize, price: price },
                     ]);
                 }}
             >
