@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import Category from "./Category.jsx";
 import CategorySelector from "./CategorySelector.jsx";
@@ -5,16 +6,29 @@ import useCategories from "./useCategories.jsx";
 
 function App() {
     const categories = useCategories();
+    const [category, setCategory] = useState([]);
+
+    useEffect(
+        function () {
+            if (categories) {
+                setCategory(categories);
+            }
+        },
+        [categories],
+    );
 
     return (
         <div className="app">
             <h1>DW Inner Circle</h1>
-            <CategorySelector />
+            <CategorySelector
+                categories={categories}
+                setCategory={setCategory}
+            />
             <div id="categories">
-                {!categories ? (
+                {!category ? (
                     <span className="loader"></span>
                 ) : (
-                    categories.map(function (category) {
+                    category.map(function (category) {
                         return (
                             <Category
                                 key={category.name}
