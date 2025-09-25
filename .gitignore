@@ -4,3 +4,5 @@ dist/
 .env
 coverage/
 tmp/
+
+routeTree.gen.ts
