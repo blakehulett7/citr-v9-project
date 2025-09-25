@@ -1,21 +1,11 @@
-import { useState } from "react";
 import { createRoot } from "react-dom/client";
-import { CartContext } from "./contexts.jsx";
-import Header from "./Header.jsx";
-import PizzaOfTheDay from "./PizzaOfTheDay.jsx";
-import Order from "./Order.jsx";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { routeTree } from "./routeTree.gen";
+
+const router = createRouter({ routeTree });
 
 function App() {
-    const cartHook = useState([]);
-    return (
-        <CartContext.Provider value={cartHook}>
-            <div>
-                <Header />
-                <Order />
-                <PizzaOfTheDay />
-            </div>
-        </CartContext.Provider>
-    );
+    return <RouterProvider router={router} />;
 }
 
 const container = document.getElementById("root");
